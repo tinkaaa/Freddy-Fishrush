@@ -1,0 +1,1539 @@
+const IMBUEMENTS_DATA = [
+  {
+    "id": "Fire_Damage",
+    "title": "Fire Damage",
+    "category": "Attack Imbuements",
+    "categoryEs": "Imbuements de Ataque",
+    "description": "Part of Physical Damage is converted to Fire Damage.",
+    "icon": "https://static.wikia.nocookie.net/tibia/images/0/06/Scorch.png/revision/latest?cb=20200519101151&path-prefix=en",
+    "tiers": [
+      {
+        "tier": "Basic",
+        "name": "Basic Scorch",
+        "effect": "10%",
+        "availableFor": "Melee Weapons, Bows and Crossbows",
+        "sources": [
+          {
+            "name": "Fiery Heart",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/7/7d/Fiery_Heart.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Intricate",
+        "name": "Intricate Scorch",
+        "effect": "25%",
+        "availableFor": "Melee Weapons, Bows and Crossbows",
+        "sources": [
+          {
+            "name": "Fiery Heart",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/7/7d/Fiery_Heart.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Green Dragon Scale",
+            "count": 5,
+            "img": "https://static.wikia.nocookie.net/tibia/images/a/ac/Green_Dragon_Scale.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Powerful",
+        "name": "Powerful Scorch",
+        "effect": "50%",
+        "availableFor": "Melee Weapons, Bows and Crossbows",
+        "sources": [
+          {
+            "name": "Fiery Heart",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/7/7d/Fiery_Heart.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Green Dragon Scale",
+            "count": 5,
+            "img": "https://static.wikia.nocookie.net/tibia/images/a/ac/Green_Dragon_Scale.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Demon Horn",
+            "count": 5,
+            "img": "https://static.wikia.nocookie.net/tibia/images/b/b8/Demon_Horn.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Earth_Damage",
+    "title": "Earth Damage",
+    "category": "Attack Imbuements",
+    "categoryEs": "Imbuements de Ataque",
+    "description": "Part of Physical Damage is converted to Earth Damage.",
+    "icon": "https://static.wikia.nocookie.net/tibia/images/8/8a/Venom.png/revision/latest?cb=20200519101326&path-prefix=en",
+    "tiers": [
+      {
+        "tier": "Basic",
+        "name": "Basic Venom",
+        "effect": "10%",
+        "availableFor": "Melee Weapons, Bows and Crossbows",
+        "sources": [
+          {
+            "name": "Swamp Grass",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/6/6f/Swamp_Grass.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Intricate",
+        "name": "Intricate Venom",
+        "effect": "25%",
+        "availableFor": "Melee Weapons, Bows and Crossbows",
+        "sources": [
+          {
+            "name": "Swamp Grass",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/6/6f/Swamp_Grass.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Poisonous Slime",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/b/b9/Poisonous_Slime.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Powerful",
+        "name": "Powerful Venom",
+        "effect": "50%",
+        "availableFor": "Melee Weapons, Bows and Crossbows",
+        "sources": [
+          {
+            "name": "Swamp Grass",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/6/6f/Swamp_Grass.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Poisonous Slime",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/b/b9/Poisonous_Slime.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Slime Heart",
+            "count": 2,
+            "img": "https://static.wikia.nocookie.net/tibia/images/6/65/Slime_Heart.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Ice_Damage",
+    "title": "Ice Damage",
+    "category": "Attack Imbuements",
+    "categoryEs": "Imbuements de Ataque",
+    "description": "Part of Physical Damage is converted to Ice Damage.",
+    "icon": "https://static.wikia.nocookie.net/tibia/images/6/60/Frost.png/revision/latest?cb=20200519101302&path-prefix=en",
+    "tiers": [
+      {
+        "tier": "Basic",
+        "name": "Basic Frost",
+        "effect": "10%",
+        "availableFor": "Melee Weapons, Bows and Crossbows",
+        "sources": [
+          {
+            "name": "Frosty Heart",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/8/83/Frosty_Heart.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Intricate",
+        "name": "Intricate Frost",
+        "effect": "25%",
+        "availableFor": "Melee Weapons, Bows and Crossbows",
+        "sources": [
+          {
+            "name": "Frosty Heart",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/8/83/Frosty_Heart.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Seacrest Hair",
+            "count": 10,
+            "img": "https://static.wikia.nocookie.net/tibia/images/6/6e/Seacrest_Hair.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Powerful",
+        "name": "Powerful Frost",
+        "effect": "50%",
+        "availableFor": "Melee Weapons, Bows and Crossbows",
+        "sources": [
+          {
+            "name": "Frosty Heart",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/8/83/Frosty_Heart.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Seacrest Hair",
+            "count": 10,
+            "img": "https://static.wikia.nocookie.net/tibia/images/6/6e/Seacrest_Hair.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Polar Bear Paw",
+            "count": 5,
+            "img": "https://static.wikia.nocookie.net/tibia/images/3/3e/Polar_Bear_Paw.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Energy_Damage",
+    "title": "Energy Damage",
+    "category": "Attack Imbuements",
+    "categoryEs": "Imbuements de Ataque",
+    "description": "Part of Physical Damage is converted to Energy Damage.",
+    "icon": "https://static.wikia.nocookie.net/tibia/images/f/fa/Electrify.png/revision/latest?cb=20200519101241&path-prefix=en",
+    "tiers": [
+      {
+        "tier": "Basic",
+        "name": "Basic Electrify",
+        "effect": "10%",
+        "availableFor": "Melee Weapons, Bows and Crossbows",
+        "sources": [
+          {
+            "name": "Rorc Feather",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/b/b8/Rorc_Feather.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Intricate",
+        "name": "Intricate Electrify",
+        "effect": "25%",
+        "availableFor": "Melee Weapons, Bows and Crossbows",
+        "sources": [
+          {
+            "name": "Rorc Feather",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/b/b8/Rorc_Feather.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Peacock Feather Fan",
+            "count": 5,
+            "img": "https://static.wikia.nocookie.net/tibia/images/f/fc/Peacock_Feather_Fan.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Powerful",
+        "name": "Powerful Electrify",
+        "effect": "50%",
+        "availableFor": "Melee Weapons, Bows and Crossbows",
+        "sources": [
+          {
+            "name": "Rorc Feather",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/b/b8/Rorc_Feather.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Peacock Feather Fan",
+            "count": 5,
+            "img": "https://static.wikia.nocookie.net/tibia/images/f/fc/Peacock_Feather_Fan.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Energy Vein",
+            "count": 1,
+            "img": "https://static.wikia.nocookie.net/tibia/images/d/dc/Energy_Vein.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Death_Damage",
+    "title": "Death Damage",
+    "category": "Attack Imbuements",
+    "categoryEs": "Imbuements de Ataque",
+    "description": "Part of Physical Damage is converted to Death Damage.",
+    "icon": "https://static.wikia.nocookie.net/tibia/images/f/f8/Reap.png/revision/latest?cb=20200519101214&path-prefix=en",
+    "tiers": [
+      {
+        "tier": "Basic",
+        "name": "Basic Reap",
+        "effect": "10%",
+        "availableFor": "Melee Weapons, Bows and Crossbows",
+        "sources": [
+          {
+            "name": "Pile of Grave Earth",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/6/65/Pile_of_Grave_Earth.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Intricate",
+        "name": "Intricate Reap",
+        "effect": "25%",
+        "availableFor": "Melee Weapons, Bows and Crossbows",
+        "sources": [
+          {
+            "name": "Pile of Grave Earth",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/6/65/Pile_of_Grave_Earth.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Demonic Skeletal Hand",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/8/8f/Demonic_Skeletal_Hand.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Powerful",
+        "name": "Powerful Reap",
+        "effect": "50%",
+        "availableFor": "Melee Weapons, Bows and Crossbows",
+        "sources": [
+          {
+            "name": "Pile of Grave Earth",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/6/65/Pile_of_Grave_Earth.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Demonic Skeletal Hand",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/8/8f/Demonic_Skeletal_Hand.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Petrified Scream",
+            "count": 5,
+            "img": "https://static.wikia.nocookie.net/tibia/images/0/0f/Petrified_Scream.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Life_Leech",
+    "title": "Life Leech",
+    "category": "Attack Imbuements",
+    "categoryEs": "Imbuements de Ataque",
+    "description": "You are healed by a part of damage you dealt.",
+    "icon": "https://static.wikia.nocookie.net/tibia/images/3/33/Vampirism.png/revision/latest?cb=20200519101746&path-prefix=en",
+    "tiers": [
+      {
+        "tier": "Basic",
+        "name": "Basic Vampirism",
+        "effect": "5%",
+        "availableFor": "All Weapons and Armors",
+        "sources": [
+          {
+            "name": "Vampire Teeth",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/f/f1/Vampire_Teeth.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Intricate",
+        "name": "Intricate Vampirism",
+        "effect": "10%",
+        "availableFor": "All Weapons and Armors",
+        "sources": [
+          {
+            "name": "Vampire Teeth",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/f/f1/Vampire_Teeth.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Bloody Pincers",
+            "count": 15,
+            "img": "https://static.wikia.nocookie.net/tibia/images/1/1d/Bloody_Pincers.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Powerful",
+        "name": "Powerful Vampirism",
+        "effect": "25%",
+        "availableFor": "All Weapons and Armors",
+        "sources": [
+          {
+            "name": "Vampire Teeth",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/f/f1/Vampire_Teeth.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Bloody Pincers",
+            "count": 15,
+            "img": "https://static.wikia.nocookie.net/tibia/images/1/1d/Bloody_Pincers.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Piece of Dead Brain",
+            "count": 5,
+            "img": "https://static.wikia.nocookie.net/tibia/images/8/85/Piece_of_Dead_Brain.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Mana_Leech",
+    "title": "Mana Leech",
+    "category": "Attack Imbuements",
+    "categoryEs": "Imbuements de Ataque",
+    "description": "Your Mana is regenerated by a part of damage you dealt.",
+    "icon": "https://static.wikia.nocookie.net/tibia/images/4/46/Void.png/revision/latest?cb=20200519101807&path-prefix=en",
+    "tiers": [
+      {
+        "tier": "Basic",
+        "name": "Basic Void",
+        "effect": "3%",
+        "availableFor": "All Weapons and Helmets",
+        "sources": [
+          {
+            "name": "Rope Belt",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/6/69/Rope_Belt.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Intricate",
+        "name": "Intricate Void",
+        "effect": "5%",
+        "availableFor": "All Weapons and Helmets",
+        "sources": [
+          {
+            "name": "Rope Belt",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/6/69/Rope_Belt.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Silencer Claws",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/d/d6/Silencer_Claws.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Powerful",
+        "name": "Powerful Void",
+        "effect": "8%",
+        "availableFor": "All Weapons and Helmets",
+        "sources": [
+          {
+            "name": "Rope Belt",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/6/69/Rope_Belt.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Silencer Claws",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/d/d6/Silencer_Claws.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Some Grimeleech Wings",
+            "count": 5,
+            "img": "https://static.wikia.nocookie.net/tibia/images/8/8c/Some_Grimeleech_Wings.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Critical_Hit",
+    "title": "Critical Hit",
+    "category": "Attack Imbuements",
+    "categoryEs": "Imbuements de Ataque",
+    "description": "All your attacks and spells have a chance to do increased damage.",
+    "icon": "https://static.wikia.nocookie.net/tibia/images/7/70/Strike.png/revision/latest?cb=20200519101700&path-prefix=en",
+    "tiers": [
+      {
+        "tier": "Basic",
+        "name": "Basic Strike",
+        "effect": "+5% crit dmg (5% chance)",
+        "availableFor": "Melee Weapons, Bows, Crossbows, Wands & Rods",
+        "sources": [
+          {
+            "name": "Protective Charm",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/a/a9/Protective_Charm.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Intricate",
+        "name": "Intricate Strike",
+        "effect": "+15% crit dmg (5% chance)",
+        "availableFor": "Melee Weapons, Bows, Crossbows, Wands & Rods",
+        "sources": [
+          {
+            "name": "Protective Charm",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/a/a9/Protective_Charm.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Sabretooth",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/6/62/Sabretooth.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Powerful",
+        "name": "Powerful Strike",
+        "effect": "+40% crit dmg (5% chance)",
+        "availableFor": "Melee Weapons, Bows, Crossbows, Wands & Rods",
+        "sources": [
+          {
+            "name": "Protective Charm",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/a/a9/Protective_Charm.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Sabretooth",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/6/62/Sabretooth.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Vexclaw Talon",
+            "count": 5,
+            "img": "https://static.wikia.nocookie.net/tibia/images/2/23/Vexclaw_Talon.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Death_Protection",
+    "title": "Death Protection",
+    "category": "Protective Imbuements",
+    "categoryEs": "Imbuements de Protección",
+    "description": "Reduces Death Damage taken by some percents.",
+    "icon": "https://static.wikia.nocookie.net/tibia/images/3/37/Lich_Shroud.png/revision/latest?cb=20200519101029&path-prefix=en",
+    "tiers": [
+      {
+        "tier": "Basic",
+        "name": "Basic Lich Shroud",
+        "effect": "2%",
+        "availableFor": "All Armors, Shields and Spellbooks",
+        "sources": [
+          {
+            "name": "Flask of Embalming Fluid",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/c/c2/Flask_of_Embalming_Fluid.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Intricate",
+        "name": "Intricate Lich Shroud",
+        "effect": "5%",
+        "availableFor": "All Armors, Shields and Spellbooks",
+        "sources": [
+          {
+            "name": "Flask of Embalming Fluid",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/c/c2/Flask_of_Embalming_Fluid.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Gloom Wolf Fur",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/f/ff/Gloom_Wolf_Fur.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Powerful",
+        "name": "Powerful Lich Shroud",
+        "effect": "10%",
+        "availableFor": "All Armors, Shields and Spellbooks",
+        "sources": [
+          {
+            "name": "Flask of Embalming Fluid",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/c/c2/Flask_of_Embalming_Fluid.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Gloom Wolf Fur",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/f/ff/Gloom_Wolf_Fur.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Mystical Hourglass",
+            "count": 5,
+            "img": "https://static.wikia.nocookie.net/tibia/images/0/08/Mystical_Hourglass.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Earth_Protection",
+    "title": "Earth Protection",
+    "category": "Protective Imbuements",
+    "categoryEs": "Imbuements de Protección",
+    "description": "Reduces Earth Damage taken by some percents.",
+    "icon": "https://static.wikia.nocookie.net/tibia/images/7/74/Snake_Skin.png/revision/latest?cb=20200519101005&path-prefix=en",
+    "tiers": [
+      {
+        "tier": "Basic",
+        "name": "Basic Snake Skin",
+        "effect": "3%",
+        "availableFor": "All Armors, Shields and Spellbooks",
+        "sources": [
+          {
+            "name": "Piece of Swampling Wood",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/f/f6/Piece_of_Swampling_Wood.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Intricate",
+        "name": "Intricate Snake Skin",
+        "effect": "8%",
+        "availableFor": "All Armors, Shields and Spellbooks",
+        "sources": [
+          {
+            "name": "Piece of Swampling Wood",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/f/f6/Piece_of_Swampling_Wood.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Snake Skin",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/3/3e/Snake_Skin.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Powerful",
+        "name": "Powerful Snake Skin",
+        "effect": "15%",
+        "availableFor": "All Armors, Shields and Spellbooks",
+        "sources": [
+          {
+            "name": "Piece of Swampling Wood",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/f/f6/Piece_of_Swampling_Wood.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Snake Skin",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/3/3e/Snake_Skin.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Brimstone Fangs",
+            "count": 10,
+            "img": "https://static.wikia.nocookie.net/tibia/images/7/7a/Brimstone_Fangs.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Fire_Protection",
+    "title": "Fire Protection",
+    "category": "Protective Imbuements",
+    "categoryEs": "Imbuements de Protección",
+    "description": "Reduces Fire Damage taken by some percents.",
+    "icon": "https://static.wikia.nocookie.net/tibia/images/0/02/Dragon_Hide.png/revision/latest?cb=20200519100926&path-prefix=en",
+    "tiers": [
+      {
+        "tier": "Basic",
+        "name": "Basic Dragon Hide",
+        "effect": "3%",
+        "availableFor": "All Armors, Shields and Spellbooks",
+        "sources": [
+          {
+            "name": "Green Dragon Leather",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/d/d9/Green_Dragon_Leather.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Intricate",
+        "name": "Intricate Dragon Hide",
+        "effect": "8%",
+        "availableFor": "All Armors, Shields and Spellbooks",
+        "sources": [
+          {
+            "name": "Green Dragon Leather",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/d/d9/Green_Dragon_Leather.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Blazing Bone",
+            "count": 10,
+            "img": "https://static.wikia.nocookie.net/tibia/images/0/01/Blazing_Bone.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Powerful",
+        "name": "Powerful Dragon Hide",
+        "effect": "15%",
+        "availableFor": "All Armors, Shields and Spellbooks",
+        "sources": [
+          {
+            "name": "Green Dragon Leather",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/d/d9/Green_Dragon_Leather.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Blazing Bone",
+            "count": 10,
+            "img": "https://static.wikia.nocookie.net/tibia/images/0/01/Blazing_Bone.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Draken Sulphur",
+            "count": 5,
+            "img": "https://static.wikia.nocookie.net/tibia/images/5/51/Draken_Sulphur.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Ice_Protection",
+    "title": "Ice Protection",
+    "category": "Protective Imbuements",
+    "categoryEs": "Imbuements de Protección",
+    "description": "Reduces Ice Damage taken by some percents.",
+    "icon": "https://static.wikia.nocookie.net/tibia/images/9/95/Quara_Scale.png/revision/latest?cb=20200519101056&path-prefix=en",
+    "tiers": [
+      {
+        "tier": "Basic",
+        "name": "Basic Quara Scale",
+        "effect": "3%",
+        "availableFor": "All Armors, Shields and Spellbooks",
+        "sources": [
+          {
+            "name": "Winter Wolf Fur",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/f/fa/Winter_Wolf_Fur.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Intricate",
+        "name": "Intricate Quara Scale",
+        "effect": "8%",
+        "availableFor": "All Armors, Shields and Spellbooks",
+        "sources": [
+          {
+            "name": "Winter Wolf Fur",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/f/fa/Winter_Wolf_Fur.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Thick Fur",
+            "count": 15,
+            "img": "https://static.wikia.nocookie.net/tibia/images/f/fc/Thick_Fur.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Powerful",
+        "name": "Powerful Quara Scale",
+        "effect": "15%",
+        "availableFor": "All Armors, Shields and Spellbooks",
+        "sources": [
+          {
+            "name": "Winter Wolf Fur",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/f/fa/Winter_Wolf_Fur.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Thick Fur",
+            "count": 15,
+            "img": "https://static.wikia.nocookie.net/tibia/images/f/fc/Thick_Fur.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Deepling Warts",
+            "count": 10,
+            "img": "https://static.wikia.nocookie.net/tibia/images/5/54/Deepling_Warts.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Energy_Protection",
+    "title": "Energy Protection",
+    "category": "Protective Imbuements",
+    "categoryEs": "Imbuements de Protección",
+    "description": "Reduces Energy Damage taken by some percents.",
+    "icon": "https://static.wikia.nocookie.net/tibia/images/3/3a/Cloud_Fabric.png/revision/latest?cb=20200519100856&path-prefix=en",
+    "tiers": [
+      {
+        "tier": "Basic",
+        "name": "Basic Cloud Fabric",
+        "effect": "3%",
+        "availableFor": "All Armors, Shields and Spellbooks",
+        "sources": [
+          {
+            "name": "Wyvern Talisman",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/a/a3/Wyvern_Talisman.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Intricate",
+        "name": "Intricate Cloud Fabric",
+        "effect": "8%",
+        "availableFor": "All Armors, Shields and Spellbooks",
+        "sources": [
+          {
+            "name": "Wyvern Talisman",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/a/a3/Wyvern_Talisman.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Crawler Head Plating",
+            "count": 15,
+            "img": "https://static.wikia.nocookie.net/tibia/images/b/be/Crawler_Head_Plating.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Powerful",
+        "name": "Powerful Cloud Fabric",
+        "effect": "15%",
+        "availableFor": "All Armors, Shields and Spellbooks",
+        "sources": [
+          {
+            "name": "Wyvern Talisman",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/a/a3/Wyvern_Talisman.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Crawler Head Plating",
+            "count": 15,
+            "img": "https://static.wikia.nocookie.net/tibia/images/b/be/Crawler_Head_Plating.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Wyrm Scale",
+            "count": 10,
+            "img": "https://static.wikia.nocookie.net/tibia/images/d/de/Wyrm_Scale.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Holy_Protection",
+    "title": "Holy Protection",
+    "category": "Protective Imbuements",
+    "categoryEs": "Imbuements de Protección",
+    "description": "Reduces Holy Damage taken by some percents.",
+    "icon": "https://static.wikia.nocookie.net/tibia/images/4/4c/Demon_Presence.png/revision/latest?cb=20200519100823&path-prefix=en",
+    "tiers": [
+      {
+        "tier": "Basic",
+        "name": "Basic Demon Presence",
+        "effect": "3%",
+        "availableFor": "All Armors, Shields and Spellbooks",
+        "sources": [
+          {
+            "name": "Cultish Robe",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/3/38/Cultish_Robe.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Intricate",
+        "name": "Intricate Demon Presence",
+        "effect": "8%",
+        "availableFor": "All Armors, Shields and Spellbooks",
+        "sources": [
+          {
+            "name": "Cultish Robe",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/3/38/Cultish_Robe.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Cultish Mask",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/4/4c/Cultish_Mask.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Powerful",
+        "name": "Powerful Demon Presence",
+        "effect": "15%",
+        "availableFor": "All Armors, Shields and Spellbooks",
+        "sources": [
+          {
+            "name": "Cultish Robe",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/3/38/Cultish_Robe.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Cultish Mask",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/4/4c/Cultish_Mask.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Hellspawn Tail",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/a/a3/Hellspawn_Tail.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Paralysis_Deflection",
+    "title": "Paralysis Deflection",
+    "category": "Support Imbuements",
+    "categoryEs": "Imbuements de Soporte",
+    "description": "Removes Paralysis with a certain chance.",
+    "icon": "https://static.wikia.nocookie.net/tibia/images/a/ae/Vibrancy.png/revision/latest?cb=20200519101829&path-prefix=en",
+    "tiers": [
+      {
+        "tier": "Basic",
+        "name": "Basic Vibrancy",
+        "effect": "15%",
+        "availableFor": "Boots",
+        "sources": [
+          {
+            "name": "Wereboar Hooves",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/0/0d/Wereboar_Hooves.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Intricate",
+        "name": "Intricate Vibrancy",
+        "effect": "25%",
+        "availableFor": "Boots",
+        "sources": [
+          {
+            "name": "Wereboar Hooves",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/0/0d/Wereboar_Hooves.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Crystallized Anger",
+            "count": 15,
+            "img": "https://static.wikia.nocookie.net/tibia/images/f/f8/Crystallized_Anger.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Powerful",
+        "name": "Powerful Vibrancy",
+        "effect": "50%",
+        "availableFor": "Boots",
+        "sources": [
+          {
+            "name": "Wereboar Hooves",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/0/0d/Wereboar_Hooves.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Crystallized Anger",
+            "count": 15,
+            "img": "https://static.wikia.nocookie.net/tibia/images/f/f8/Crystallized_Anger.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Quill",
+            "count": 5,
+            "img": "https://static.wikia.nocookie.net/tibia/images/f/fd/Quill.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Walking_Speed",
+    "title": "Walking Speed",
+    "category": "Support Imbuements",
+    "categoryEs": "Imbuements de Soporte",
+    "description": "Increases your Speed.",
+    "icon": "https://static.wikia.nocookie.net/tibia/images/a/af/Swiftness.png/revision/latest?cb=20200519101723&path-prefix=en",
+    "tiers": [
+      {
+        "tier": "Basic",
+        "name": "Basic Swiftness",
+        "effect": "10",
+        "availableFor": "Boots",
+        "sources": [
+          {
+            "name": "Damselfly Wing",
+            "count": 15,
+            "img": "https://static.wikia.nocookie.net/tibia/images/8/84/Damselfly_Wing.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Intricate",
+        "name": "Intricate Swiftness",
+        "effect": "15",
+        "availableFor": "Boots",
+        "sources": [
+          {
+            "name": "Damselfly Wing",
+            "count": 15,
+            "img": "https://static.wikia.nocookie.net/tibia/images/8/84/Damselfly_Wing.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Compass",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/1/1c/Compass.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Powerful",
+        "name": "Powerful Swiftness",
+        "effect": "30",
+        "availableFor": "Boots",
+        "sources": [
+          {
+            "name": "Damselfly Wing",
+            "count": 15,
+            "img": "https://static.wikia.nocookie.net/tibia/images/8/84/Damselfly_Wing.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Compass",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/1/1c/Compass.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Waspoid Wing",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/6/69/Waspoid_Wing.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Capacity",
+    "title": "Capacity",
+    "category": "Support Imbuements",
+    "categoryEs": "Imbuements de Soporte",
+    "description": "Increases your Capacity.",
+    "icon": "https://static.wikia.nocookie.net/tibia/images/f/fd/Featherweight.png/revision/latest?cb=20200519101526&path-prefix=en",
+    "tiers": [
+      {
+        "tier": "Basic",
+        "name": "Basic Featherweight",
+        "effect": "3%",
+        "availableFor": "Backpacks",
+        "sources": [
+          {
+            "name": "Fairy Wings",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/1/1d/Fairy_Wings.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Intricate",
+        "name": "Intricate Featherweight",
+        "effect": "8%",
+        "availableFor": "Backpacks",
+        "sources": [
+          {
+            "name": "Fairy Wings",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/1/1d/Fairy_Wings.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Little Bowl of Myrrh",
+            "count": 10,
+            "img": "https://static.wikia.nocookie.net/tibia/images/3/38/Little_Bowl_of_Myrrh.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Powerful",
+        "name": "Powerful Featherweight",
+        "effect": "15%",
+        "availableFor": "Backpacks",
+        "sources": [
+          {
+            "name": "Fairy Wings",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/1/1d/Fairy_Wings.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Little Bowl of Myrrh",
+            "count": 10,
+            "img": "https://static.wikia.nocookie.net/tibia/images/3/38/Little_Bowl_of_Myrrh.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Goosebump Leather",
+            "count": 5,
+            "img": "https://static.wikia.nocookie.net/tibia/images/0/06/Goosebump_Leather.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Magic_Level",
+    "title": "Magic Level",
+    "category": "Skill Improving Imbuements",
+    "categoryEs": "Imbuements de Habilidades (Skills)",
+    "description": "Increases your Magic Level skill.",
+    "icon": "https://static.wikia.nocookie.net/tibia/images/8/80/Epiphany.png/revision/latest?cb=20200519101500&path-prefix=en",
+    "tiers": [
+      {
+        "tier": "Basic",
+        "name": "Basic Epiphany",
+        "effect": "1",
+        "availableFor": "All Wands and mage-exclusive Helmets.",
+        "sources": [
+          {
+            "name": "Elvish Talisman",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/a/a4/Elvish_Talisman.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Intricate",
+        "name": "Intricate Epiphany",
+        "effect": "2",
+        "availableFor": "All Wands and mage-exclusive Helmets.",
+        "sources": [
+          {
+            "name": "Elvish Talisman",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/a/a4/Elvish_Talisman.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Broken Shamanic Staff",
+            "count": 15,
+            "img": "https://static.wikia.nocookie.net/tibia/images/2/29/Broken_Shamanic_Staff.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Powerful",
+        "name": "Powerful Epiphany",
+        "effect": "4",
+        "availableFor": "All Wands and mage-exclusive Helmets.",
+        "sources": [
+          {
+            "name": "Elvish Talisman",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/a/a4/Elvish_Talisman.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Broken Shamanic Staff",
+            "count": 15,
+            "img": "https://static.wikia.nocookie.net/tibia/images/2/29/Broken_Shamanic_Staff.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Strand of Medusa Hair",
+            "count": 15,
+            "img": "https://static.wikia.nocookie.net/tibia/images/5/57/Strand_of_Medusa_Hair.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Fist_Fighting",
+    "title": "Fist Fighting",
+    "category": "Skill Improving Imbuements",
+    "categoryEs": "Imbuements de Habilidades (Skills)",
+    "description": "Increases your Fist Fighting skill.",
+    "icon": "https://static.wikia.nocookie.net/tibia/images/8/8f/Punch.png/revision/latest?cb=20250226170216&path-prefix=en",
+    "tiers": [
+      {
+        "tier": "Basic",
+        "name": "Basic Punch",
+        "effect": "1",
+        "availableFor": "All Helmets and Fist Weapons",
+        "sources": [
+          {
+            "name": "Tarantula Egg",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/d/dc/Tarantula_Egg.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Intricate",
+        "name": "Intricate Punch",
+        "effect": "2",
+        "availableFor": "All Helmets and Fist Weapons",
+        "sources": [
+          {
+            "name": "Tarantula Egg",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/d/dc/Tarantula_Egg.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Mantassin Tail",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/3/37/Mantassin_Tail.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Powerful",
+        "name": "Powerful Punch",
+        "effect": "4",
+        "availableFor": "All Helmets and Fist Weapons",
+        "sources": [
+          {
+            "name": "Tarantula Egg",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/d/dc/Tarantula_Egg.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Mantassin Tail",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/3/37/Mantassin_Tail.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Gold-Brocaded Cloth",
+            "count": 15,
+            "img": "https://static.wikia.nocookie.net/tibia/images/7/79/Gold-Brocaded_Cloth.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Club_Fighting",
+    "title": "Club Fighting",
+    "category": "Skill Improving Imbuements",
+    "categoryEs": "Imbuements de Habilidades (Skills)",
+    "description": "Increases your Club Fighting skill.",
+    "icon": "https://static.wikia.nocookie.net/tibia/images/d/d8/Bash.png/revision/latest?cb=20200519101349&path-prefix=en",
+    "tiers": [
+      {
+        "tier": "Basic",
+        "name": "Basic Bash",
+        "effect": "1",
+        "availableFor": "All Helmets and Club Weapons",
+        "sources": [
+          {
+            "name": "Cyclops Toe",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/b/bd/Cyclops_Toe.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Intricate",
+        "name": "Intricate Bash",
+        "effect": "2",
+        "availableFor": "All Helmets and Club Weapons",
+        "sources": [
+          {
+            "name": "Cyclops Toe",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/b/bd/Cyclops_Toe.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Ogre Nose Ring",
+            "count": 15,
+            "img": "https://static.wikia.nocookie.net/tibia/images/9/9b/Ogre_Nose_Ring.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Powerful",
+        "name": "Powerful Bash",
+        "effect": "4",
+        "availableFor": "All Helmets and Club Weapons",
+        "sources": [
+          {
+            "name": "Cyclops Toe",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/b/bd/Cyclops_Toe.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Ogre Nose Ring",
+            "count": 15,
+            "img": "https://static.wikia.nocookie.net/tibia/images/9/9b/Ogre_Nose_Ring.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Warmaster's Wristguards",
+            "count": 10,
+            "img": "https://static.wikia.nocookie.net/tibia/images/2/28/Warmaster%26%2339%3Bs_Wristguards.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Sword_Fighting",
+    "title": "Sword Fighting",
+    "category": "Skill Improving Imbuements",
+    "categoryEs": "Imbuements de Habilidades (Skills)",
+    "description": "Increases your Sword Fighting skill.",
+    "icon": "https://static.wikia.nocookie.net/tibia/images/5/56/Slash.png/revision/latest?cb=20200519101639&path-prefix=en",
+    "tiers": [
+      {
+        "tier": "Basic",
+        "name": "Basic Slash",
+        "effect": "1",
+        "availableFor": "All Helmets and Sword Weapons",
+        "sources": [
+          {
+            "name": "Lion's Mane",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/c/c4/Lion%26%2339%3Bs_Mane.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Intricate",
+        "name": "Intricate Slash",
+        "effect": "2",
+        "availableFor": "All Helmets and Sword Weapons",
+        "sources": [
+          {
+            "name": "Lion's Mane",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/c/c4/Lion%26%2339%3Bs_Mane.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Mooh'tah Shell",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/0/07/Mooh%26%2339%3Btah_Shell.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Powerful",
+        "name": "Powerful Slash",
+        "effect": "4",
+        "availableFor": "All Helmets and Sword Weapons",
+        "sources": [
+          {
+            "name": "Lion's Mane",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/c/c4/Lion%26%2339%3Bs_Mane.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Mooh'tah Shell",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/0/07/Mooh%26%2339%3Btah_Shell.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "War Crystal",
+            "count": 5,
+            "img": "https://static.wikia.nocookie.net/tibia/images/4/41/War_Crystal.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Axe_Fighting",
+    "title": "Axe Fighting",
+    "category": "Skill Improving Imbuements",
+    "categoryEs": "Imbuements de Habilidades (Skills)",
+    "description": "Increases your Axe Fighting skill.",
+    "icon": "https://static.wikia.nocookie.net/tibia/images/e/e3/Chop.png/revision/latest?cb=20200519101433&path-prefix=en",
+    "tiers": [
+      {
+        "tier": "Basic",
+        "name": "Basic Chop",
+        "effect": "1",
+        "availableFor": "All Helmets and Axe Weapons",
+        "sources": [
+          {
+            "name": "Orc Tooth",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/7/70/Orc_Tooth.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Intricate",
+        "name": "Intricate Chop",
+        "effect": "2",
+        "availableFor": "All Helmets and Axe Weapons",
+        "sources": [
+          {
+            "name": "Orc Tooth",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/7/70/Orc_Tooth.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Battle Stone",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/1/10/Battle_Stone.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Powerful",
+        "name": "Powerful Chop",
+        "effect": "4",
+        "availableFor": "All Helmets and Axe Weapons",
+        "sources": [
+          {
+            "name": "Orc Tooth",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/7/70/Orc_Tooth.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Battle Stone",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/1/10/Battle_Stone.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Moohtant Horn",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/0/0f/Moohtant_Horn.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Distance_Fighting",
+    "title": "Distance Fighting",
+    "category": "Skill Improving Imbuements",
+    "categoryEs": "Imbuements de Habilidades (Skills)",
+    "description": "Increases your Distance Fighting skill.",
+    "icon": "https://static.wikia.nocookie.net/tibia/images/e/ee/Precision.png/revision/latest?cb=20200519101619&path-prefix=en",
+    "tiers": [
+      {
+        "tier": "Basic",
+        "name": "Basic Precision",
+        "effect": "1",
+        "availableFor": "All Helmets, Bows and Crossbows",
+        "sources": [
+          {
+            "name": "Elven Scouting Glass",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/c/cf/Elven_Scouting_Glass.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Intricate",
+        "name": "Intricate Precision",
+        "effect": "2",
+        "availableFor": "All Helmets, Bows and Crossbows",
+        "sources": [
+          {
+            "name": "Elven Scouting Glass",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/c/cf/Elven_Scouting_Glass.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Elven Hoof",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/c/ca/Elven_Hoof.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Powerful",
+        "name": "Powerful Precision",
+        "effect": "4",
+        "availableFor": "All Helmets, Bows and Crossbows",
+        "sources": [
+          {
+            "name": "Elven Scouting Glass",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/c/cf/Elven_Scouting_Glass.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Elven Hoof",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/c/ca/Elven_Hoof.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Metal Spike",
+            "count": 10,
+            "img": "https://static.wikia.nocookie.net/tibia/images/c/cf/Metal_Spike.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Shielding",
+    "title": "Shielding",
+    "category": "Skill Improving Imbuements",
+    "categoryEs": "Imbuements de Habilidades (Skills)",
+    "description": "Increases your Shielding skill.",
+    "icon": "https://static.wikia.nocookie.net/tibia/images/a/ad/Blockade.png/revision/latest?cb=20200519101414&path-prefix=en",
+    "tiers": [
+      {
+        "tier": "Basic",
+        "name": "Basic Blockade",
+        "effect": "1",
+        "availableFor": "All Helmets, Shields and Spellbooks",
+        "sources": [
+          {
+            "name": "Piece of Scarab Shell",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/4/45/Piece_of_Scarab_Shell.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Intricate",
+        "name": "Intricate Blockade",
+        "effect": "2",
+        "availableFor": "All Helmets, Shields and Spellbooks",
+        "sources": [
+          {
+            "name": "Piece of Scarab Shell",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/4/45/Piece_of_Scarab_Shell.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Brimstone Shell",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/d/d9/Brimstone_Shell.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      },
+      {
+        "tier": "Powerful",
+        "name": "Powerful Blockade",
+        "effect": "4",
+        "availableFor": "All Helmets, Shields and Spellbooks",
+        "sources": [
+          {
+            "name": "Piece of Scarab Shell",
+            "count": 20,
+            "img": "https://static.wikia.nocookie.net/tibia/images/4/45/Piece_of_Scarab_Shell.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Brimstone Shell",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/d/d9/Brimstone_Shell.gif/revision/latest?path-prefix=en"
+          },
+          {
+            "name": "Frazzle Skin",
+            "count": 25,
+            "img": "https://static.wikia.nocookie.net/tibia/images/d/d6/Frazzle_Skin.gif/revision/latest?path-prefix=en"
+          }
+        ]
+      }
+    ]
+  }
+];
+if (typeof module !== "undefined") module.exports = IMBUEMENTS_DATA;

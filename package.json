@@ -1,0 +1,67 @@
+{
+  "name": "freddy-fish-rush",
+  "productName": "Freddy Fish Rush",
+  "version": "1.1.9",
+  "description": "Freddy Fish Rush - Rastreador y Gestor de NPCs de Tibia",
+  "main": "main.js",
+  "author": "Freddy",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "desktop": "electron .",
+    "web": "node server.js",
+    "build:installer": "npx electron-builder --win nsis",
+    "publish:github": "npx electron-builder --win nsis --publish always"
+  },
+  "build": {
+    "appId": "com.freddyfishrush.app",
+    "productName": "Freddy Fish Rush",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "tinkaaa",
+        "repo": "Freddy-Fishrush"
+      }
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "app.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Freddy Fish Rush",
+      "artifactName": "Freddy-Fish-Rush-Setup-${version}.${ext}",
+      "installerIcon": "app.ico",
+      "uninstallerIcon": "app.ico",
+      "runAfterFinish": true,
+      "include": "build/installer.nsh"
+    },
+    "files": [
+      "**/*",
+      "!dist/**",
+      "!Freddy Fish Rush.exe",
+      "!ABRIR_TIBIA_TRACKER.bat",
+      "!.git/**"
+    ],
+    "electronVersion": "34.2.0"
+  },
+  "devDependencies": {
+    "electron": "34.2.0"
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.9"
+  }
+}

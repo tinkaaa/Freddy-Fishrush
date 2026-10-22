@@ -1,0 +1,8 @@
+node_modules/
+dist/
+build/
+*.log
+scratch/
+Freddy Fish Rush.exe
+ABRIR_TIBIA_TRACKER.bat
+.DS_Store
