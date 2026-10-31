@@ -4829,9 +4829,20 @@ function initInAppUpdaterUI() {
 // ==========================================
 const APP_CHANGELOG = [
   {
+    version: '1.2.1',
+    date: '31 de Octubre, 2026',
+    isLatest: true,
+    changes: [
+      { type: '🪙', text: '<strong>Imbuiments Básicos (Gold Token):</strong> Nueva sección exclusiva posicionada hasta arriba con los 3 encantamientos esenciales canjeables por Gold Tokens: Mana Leech, Life Leech y Critical Hit.' },
+      { type: '🎨', text: '<strong>Iconos temáticos en cada categoría:</strong> Mana Leech (Void / frasco morado) en Básicos, Death Protection (Lich Shroud / escudo negro) en Protección, Capacity (mochilita café) en Soporte, Distance Fighting (arquito) en Skills y Fire Damage (antorcha) en Ataque.' },
+      { type: '🪙', text: '<strong>Insignia visual de Gold Token:</strong> Sprite oficial de Gold Token integrado al final del título de la sección y en los badges de los encantamientos.' },
+      { type: '⚔️', text: '<strong>Categoría de Ataque depurada:</strong> Reducida a los 5 encantamientos de conversión elemental (Fuego, Tierra, Hielo, Energía y Muerte).' }
+    ]
+  },
+  {
     version: '1.1.9',
     date: '22 de Octubre, 2026',
-    isLatest: true,
+    isLatest: false,
     changes: [
       { type: '✨', text: '<strong>Barra superior compacta:</strong> Encabezado optimizado en una sola fila continua para ahorrar espacio en pantalla.' },
       { type: '🚢', text: '<strong>Optimización de Yasir:</strong> Eliminado widget de estado en vivo; Yasir ahora está 100% activo en sus 3 puertos oficiales con accesos a mapa interactivo.' },
