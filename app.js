@@ -5047,13 +5047,16 @@ function updateNavBadges() {
   }
 
   const allCount = AppState.imbuements ? AppState.imbuements.length : 24;
-  const attackCount = AppState.imbuements ? AppState.imbuements.filter(i => i.category === 'Attack Imbuements').length : 8;
+  const basicCount = AppState.imbuements ? AppState.imbuements.filter(i => i.category === 'Basic Imbuements (Gold Token)').length : 3;
+  const attackCount = AppState.imbuements ? AppState.imbuements.filter(i => i.category === 'Attack Imbuements').length : 5;
   const protectCount = AppState.imbuements ? AppState.imbuements.filter(i => i.category === 'Protective Imbuements').length : 6;
   const supportCount = AppState.imbuements ? AppState.imbuements.filter(i => i.category === 'Support Imbuements').length : 3;
   const skillsCount = AppState.imbuements ? AppState.imbuements.filter(i => i.category === 'Skill Improving Imbuements').length : 7;
 
   const elAll = document.getElementById('imbu-count-all');
   if (elAll) elAll.textContent = allCount;
+  const elBasic = document.getElementById('imbu-count-basic');
+  if (elBasic) elBasic.textContent = basicCount;
   const elAtt = document.getElementById('imbu-count-attack');
   if (elAtt) elAtt.textContent = attackCount;
   const elPro = document.getElementById('imbu-count-protect');
@@ -5171,35 +5174,43 @@ function initImbuementsUI() {
   }
 }
 
-// Configuración de categorías de Imbuements (Protección primero por orden prioritario)
+// Configuración de categorías de Imbuements (Básicos con Gold Token primero por orden de importancia)
 const IMBU_CATEGORIES_CONFIG = [
+  {
+    key: 'Basic Imbuements (Gold Token)',
+    title: 'Imbuiments Basicos (Gold Token)',
+    titleHtml: 'Imbuiments Basicos (Gold Token <img src="gold_token.png" alt="Gold Token" class="imbu-gold-token-inline-icon">)',
+    icon: '<img src="basic_imbu_icon.png?v=2" alt="Mana Leech" class="imbu-cat-custom-icon">',
+    color: '#ffd753',
+    desc: 'Los 3 encantamientos esenciales canjeables por Gold Tokens: Mana Leech (Void), Life Leech (Vampirism) y Critical Hit (Strike).'
+  },
   {
     key: 'Protective Imbuements',
     title: 'Imbuements de Protección',
-    icon: '🛡️',
+    icon: '<img src="imbu_protect_icon.png" alt="Protección" class="imbu-cat-custom-icon">',
     color: '#38bdf8',
     desc: 'Reducción de daño elemental (Fuego, Hielo, Tierra, Energía, Muerte y Sagrado).'
   },
   {
     key: 'Support Imbuements',
     title: 'Imbuements de Soporte',
-    icon: '⚡',
+    icon: '<img src="imbu_support_icon.png" alt="Soporte" class="imbu-cat-custom-icon">',
     color: '#22c55e',
     desc: 'Velocidad (Swiftness), capacidad (Featherweight) y remoción de parálisis (Paralysis Deflection).'
   },
   {
     key: 'Skill Improving Imbuements',
     title: 'Imbuements de Skills',
-    icon: '🏹',
+    icon: '<img src="imbu_skills_icon.png" alt="Skills" class="imbu-cat-custom-icon">',
     color: '#eab308',
     desc: 'Bonificación de Magic Level, Sword, Axe, Club, Distance, Shielding y Fishing.'
   },
   {
     key: 'Attack Imbuements',
     title: 'Imbuements de Ataque',
-    icon: '⚔️',
+    icon: '<img src="imbu_attack_icon.png" alt="Ataque" class="imbu-cat-custom-icon">',
     color: '#f97316',
-    desc: 'Conversión de daño elemental (Fuego, Tierra, Hielo, Energía, Muerte) y robo de vida/maná/crítico.'
+    desc: 'Conversión de daño elemental (Fuego, Tierra, Hielo, Energía y Muerte).'
   }
 ];
 
@@ -5408,7 +5419,7 @@ function renderImbuements() {
             <div class="imbu-cat-icon-badge">${catConfig.icon}</div>
             <div>
               <h3 class="imbu-cat-title-text">
-                ${escapeHtml(catConfig.title)}
+                ${catConfig.titleHtml || escapeHtml(catConfig.title)}
                 <span class="imbu-cat-count-pill">${catItems.length}</span>
               </h3>
               <p class="imbu-cat-desc-text">${escapeHtml(catConfig.desc)}</p>
@@ -5429,7 +5440,8 @@ function renderImbuements() {
         <div class="imbu-category-items">
           ${catItems.map(imbu => {
             let catClass = 'imbu-badge-attack';
-            if (imbu.category === 'Protective Imbuements') catClass = 'imbu-badge-protective';
+            if (imbu.category === 'Basic Imbuements (Gold Token)') catClass = 'imbu-badge-basic';
+            else if (imbu.category === 'Protective Imbuements') catClass = 'imbu-badge-protective';
             else if (imbu.category === 'Support Imbuements') catClass = 'imbu-badge-support';
             else if (imbu.category === 'Skill Improving Imbuements') catClass = 'imbu-badge-skill';
 
@@ -5465,7 +5477,7 @@ function renderImbuements() {
                     <div class="imbu-row-info">
                       <div class="imbu-row-top-line">
                         <h4 class="imbu-row-title">${escapeHtml(imbu.title)}</h4>
-                        <span class="imbu-badge-category ${catClass}">${escapeHtml(imbu.categoryEs || imbu.category)}</span>
+                        <span class="imbu-badge-category ${catClass}">${imbu.category === 'Basic Imbuements (Gold Token)' ? `Imbuiments Basicos (Gold Token <img src="gold_token.png" class="imbu-badge-token-img" alt="Gold Token">)` : escapeHtml(imbu.categoryEs || imbu.category)}</span>
                       </div>
                       <div class="imbu-row-sub-line">
                         ${imbu.description ? `<span class="imbu-row-desc" title="${escapeHtml(imbu.description)}">${escapeHtml(imbu.description)}</span>` : ''}

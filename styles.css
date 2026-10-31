@@ -3315,6 +3315,25 @@ body {
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
 }
 
+.imbu-cat-icon-badge .imbu-cat-custom-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  border-radius: 4px;
+  display: block;
+}
+
+.imbu-category-section[data-cat-key="Basic Imbuements (Gold Token)"] {
+  border-left: 4px solid #ffd753;
+  box-shadow: 0 0 16px rgba(255, 215, 83, 0.08);
+}
+.imbu-category-section[data-cat-key="Basic Imbuements (Gold Token)"] .imbu-cat-icon-badge {
+  background: rgba(234, 179, 8, 0.22);
+  border: 1px solid rgba(255, 215, 83, 0.5);
+  color: #ffd753;
+}
+
 .imbu-category-section[data-cat-key="Protective Imbuements"] {
   border-left: 4px solid #38bdf8;
 }
@@ -3360,6 +3379,35 @@ body {
   align-items: center;
   gap: 0.65rem;
   margin: 0;
+}
+
+.imbu-gold-token-inline-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  vertical-align: -4px;
+  margin-left: 4px;
+  filter: drop-shadow(0 0 5px rgba(255, 215, 83, 0.6));
+}
+
+.imbu-badge-token-img {
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  vertical-align: -2px;
+  margin-left: 4px;
+  filter: drop-shadow(0 0 3px rgba(255, 215, 83, 0.5));
+}
+
+.imbu-chip-token-img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  vertical-align: -2px;
+  margin-right: 4px;
 }
 
 .imbu-cat-count-pill {
@@ -3451,6 +3499,9 @@ body {
 }
 
 /* Elemental Accent Borders on left edge */
+.imbu-list-row[data-cat="Basic Imbuements (Gold Token)"] {
+  border-left: 4px solid #ffd753;
+}
 .imbu-list-row[data-cat="Attack Imbuements"] {
   border-left: 4px solid #f97316;
 }
@@ -3668,6 +3719,12 @@ body {
   padding: 0.15rem 0.55rem;
   border-radius: 8px;
   white-space: nowrap;
+}
+
+.imbu-badge-basic {
+  background: rgba(234, 179, 8, 0.18);
+  color: #ffd753;
+  border: 1px solid rgba(255, 215, 83, 0.45);
 }
 
 .imbu-badge-attack {

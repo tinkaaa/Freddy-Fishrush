@@ -1,7 +1,7 @@
 {
   "name": "freddy-fish-rush",
   "productName": "Freddy Fish Rush",
-  "version": "1.1.9",
+  "version": "1.2.0",
   "description": "Freddy Fish Rush - Rastreador y Gestor de NPCs de Tibia",
   "main": "main.js",
   "author": "Freddy",
